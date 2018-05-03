@@ -121,15 +121,25 @@ public class SwiftyGiphyViewController: UIViewController {
 
         keyboardAdjustConstraint = collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
 
+        if #available(iOS 11.0, *) {
+            NSLayoutConstraint.activate([
+                searchContainerView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor)
+                ])
+
+        } else {
+            NSLayoutConstraint.activate([
+                searchContainerView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor)
+                ])
+        }
+
         NSLayoutConstraint.activate([
-                searchContainerView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-                searchContainerView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor),
-                searchContainerView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-                searchContainerView.heightAnchor.constraint(equalToConstant: 44.0),
-                collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-                collectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
-                collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-                keyboardAdjustConstraint
+            searchContainerView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            searchContainerView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            searchContainerView.heightAnchor.constraint(equalToConstant: 44.0),
+            collectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            keyboardAdjustConstraint
             ])
 
         NSLayoutConstraint.activate([
