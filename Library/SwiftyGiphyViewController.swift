@@ -227,8 +227,8 @@ public class SwiftyGiphyViewController: UIViewController {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
-        SDImageCache.shared().clearMemory()
-        SDImageCache.shared().clearDisk(onCompletion: nil)
+        SDImageCache.shared.clearMemory()
+        SDImageCache.shared.clearDisk(onCompletion: nil)
     }
 
     @objc fileprivate func dismissPicker()

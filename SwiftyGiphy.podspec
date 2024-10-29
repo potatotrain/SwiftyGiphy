@@ -37,7 +37,6 @@ An easy to use library that provides a UI and API layer for Giphy discovery and 
   s.frameworks = 'UIKit', 'AVFoundation'
 
   s.dependency 'ObjectMapper', '~> 3.0'
-  s.dependency 'SDWebImage/GIF'
+  s.dependency 'SDWebImage'
   s.dependency 'NSTimer-Blocks'
-  s.dependency 'FLAnimatedImage', '~> 1.0'
 end
